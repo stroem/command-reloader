@@ -1,6 +1,10 @@
 
 import logging
+import os
+
 from watchdog.events import FileSystemEventHandler
+
+from .executor import Executor
 
 __all__ = ('Monitor')
 
