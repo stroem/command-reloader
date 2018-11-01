@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
 setup(
     name='reloadcmd',
@@ -12,11 +12,19 @@ setup(
     url='https://github.com/stroem/python-reloadcmd',
     license='MIT License',
 
-    packages=[
-        'src'
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
+
+    install_requires=[
+        'coloredlogs',
+        'watchdog',
     ],
 
-    data_files=[('', ['__main__.py'])],
+    entry_points={
+        'console_scripts': [
+            'reloadcmd=reloadcmd.__main__:main',
+        ],
+    },
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
