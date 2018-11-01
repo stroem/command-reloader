@@ -6,7 +6,6 @@ import coloredlogs
 import logging
 import argparse
 from watchdog.observers import Observer
-from reloadcmd.executor import Executor
 from reloadcmd.monitor import Monitor
 
 log_level = logging.DEBUG
